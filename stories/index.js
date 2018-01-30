@@ -8,11 +8,16 @@ import 'font-awesome/css/font-awesome.min.css';
 import App from '../src/App';
 import Header from '../src/components/Header';
 
-storiesOf('App', module).add('Regular render', () => (
-  <App onClick={action('clicked')} />
-));
+import Footer from '../src/components/Footer';
+import Admin from '../src/containers/Admin';
+import Form from '../src/containers/Form';
+import Dashboard from '../src/containers/Dashboard';
+import DataGrid from '../src/containers/DataGrid';
 
-storiesOf('Header', module).add('Header', () => (
-  <Header />
-));
-
+storiesOf('Admin Demo', module)
+  .add('App', () => <App />)
+  .add('Admin', () => <Admin />)  
+  .add('Footer', () => <Footer />)
+  .add('Dashboard', () => <Dashboard />)
+  .add('DataGrid', () => <DataGrid />)
+  .add('Form', () => <Form />);
