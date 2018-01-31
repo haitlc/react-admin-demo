@@ -8,6 +8,8 @@ const StyledFooter = styled.footer`
   position: fixed;
   width: 100%;
   border: solid 1px #e7e7e7;
+  background: white;
+  z-index: 9998;
 `;
 
 class Footer extends Component {

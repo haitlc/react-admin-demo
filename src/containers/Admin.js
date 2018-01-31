@@ -1,7 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
-import { Navbar, Nav, NavItem, Badge, Grid } from 'react-bootstrap';
+import { Grid } from 'react-bootstrap';
 import styled from 'styled-components';
 import { Switch, Route, Redirect, HashRouter } from 'react-router-dom';
 
@@ -12,7 +12,8 @@ import Form from '../containers/Form';
 import Footer from '../components/Footer';
 
 const Main = styled.main`
-  height: 100%;
+  margin-top: 60px;
+  margin-bottom: 40px;
 `;
 
 class Admin extends Component {

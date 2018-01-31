@@ -14,8 +14,7 @@ import Form from '../src/containers/Form';
 import Dashboard from '../src/containers/Dashboard';
 import DataGrid from '../src/containers/DataGrid';
 
-storiesOf('Admin Demo', module)
-  .add('App', () => <App />)
+storiesOf('Admin Demo', module)  
   .add('Admin', () => <Admin />)  
   .add('Footer', () => <Footer />)
   .add('Dashboard', () => <Dashboard />)

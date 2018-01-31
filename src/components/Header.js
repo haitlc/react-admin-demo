@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import { Navbar, Nav, NavItem, Badge } from 'react-bootstrap';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const StyledNavbar = styled(Navbar)`
-  background: white; 
-  
+  background: white;
+  top: 0px;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
 `;
 
 const StyledBrand = styled(Navbar.Brand)`
@@ -13,26 +16,24 @@ const StyledBrand = styled(Navbar.Brand)`
   font-weight: bold;
 `;
 
-const StyledBadge = styled(Badge)`
-  background: #f86c6b;
-`;
 
-const menuItems = [
-  {
-    title: 'Dashboard',
-    url: '/dashboard'
-  },
-  {
-    title: 'Data Grid',
-    url: '/data-grid'
-  },
-  {
-    title: 'Form',
-    url: '/form'
-  }
-];
 
 class Header extends Component {
+  menuItems: Array<> = [
+    {
+      title: 'Dashboard',
+      url: '/dashboard'
+    },
+    {
+      title: 'Data Grid',
+      url: '/data-grid'
+    },
+    {
+      title: 'Form',
+      url: '/form'
+    }
+  ];
+
   render() {
     return (
       <StyledNavbar collapseOnSelect>
@@ -42,9 +43,11 @@ class Header extends Component {
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav>
-            {menuItems.map((item, i) => (
+            {this.menuItems.map((item, i) => (
               <NavItem eventKey={i}>
-                <NavLink to={item.url}>{item.title}</NavLink>
+                <NavLink to={item.url}>
+                  <div style={{ width: '100%' }}>{item.title}</div>
+                </NavLink>
               </NavItem>
             ))}
           </Nav>
