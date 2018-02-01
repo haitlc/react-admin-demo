@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import DataGrid from './DataGrid';
+import BarChart from './BarChart';
 
-describe('<DataGrid>', () => {
+describe('<BarChart>', () => {
   it('renders without crashing', () => {
-    shallow(<DataGrid />);
+    shallow(<BarChart />);
   });
 });

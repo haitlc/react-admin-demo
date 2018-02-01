@@ -1,8 +1,7 @@
-// @flow
-
 import React, { Component } from 'react';
 import { Grid, Row, Col, Panel, Table, Badge, Pagination } from 'react-bootstrap';
 import styled, { keyframes } from 'styled-components';
+import bg from '../images/bg.jpg';
 
 const fadeIn = keyframes`
   from {
@@ -35,9 +34,16 @@ const ColorBadge = styled(Badge)`
   }};
 `;
 
+const StyledPanelHeading = styled(Panel.Heading)`
+  padding: 0;
+  margin: 0;
+  height: 200px;
+  overflow: hidden;
+`;
+
 class DataGrid extends Component {
-  headers: Array<string> = ['User', 'Date', 'Role', 'Status'];
-  users: Array<string> = [
+  headers = ['User', 'Date', 'Role', 'Status'];
+  users = [
     {
       name: 'Samppa Nori',
       date: '2012/01/01',
@@ -75,37 +81,57 @@ class DataGrid extends Component {
     }
   ];
 
+  renderTableBody = () => (
+    <tbody>
+      {this.users.map((user, i) => {
+        return (
+          <tr key={i}>
+            <td>{user.name}</td>
+            <td>{user.date}</td>
+            <td>{user.role}</td>
+            <td>
+              <ColorBadge color={user.statusColor}>{user.status}</ColorBadge>
+            </td>
+          </tr>
+        );
+      })}
+    </tbody>
+  );
+
+  renderTableHeader = () => (
+    <thead>
+      <tr>{this.headers.map((header, i) => <th key={i}>{header}</th>)}</tr>
+    </thead>
+  );
+
   render() {
     return (
       <FadeIn>
-        <Row className="show-grid">
+        <Row >
           <Col xs={12} md={6} lg={6}>
             <Panel>
-              <Panel.Heading>Simple Table</Panel.Heading>
+              <StyledPanelHeading>
+                <img width="100%" src={bg} alt="cap" />
+              </StyledPanelHeading>
               <Panel.Body>
                 <Table responsive hover striped>
-                  <thead>
-                    <tr>{this.headers.map(header => <th>{header}</th>)}</tr>
-                  </thead>
-                  <tbody>
-                    {this.users.map(user => {
-                      return (
-                        <tr>
-                          <td>{user.name}</td>
-                          <td>{user.date}</td>
-                          <td>{user.role}</td>
-                          <td>
-                            <ColorBadge color={user.statusColor}>Active</ColorBadge>
-                          </td>
-                        </tr>
-                      );
-                    })}
-                  </tbody>
+                  {this.renderTableHeader()}
+                  {this.renderTableBody()}
+                </Table>
+              </Panel.Body>
+            </Panel>
+          </Col>
+          <Col xs={12} md={6} lg={6}>
+            <Panel>
+              <Panel.Heading>Striped Table</Panel.Heading>
+              <Panel.Body>
+                <Table responsive striped bordered hover>
+                  {this.renderTableHeader()}
+                  {this.renderTableBody()}
                 </Table>
                 <Pagination style={{ display: 'flex', justifyContent: 'center' }}>
                   <Pagination.First />
                   <Pagination.Prev />
-                  <Pagination.Ellipsis />
                   <Pagination.Item>1</Pagination.Item>
                   <Pagination.Item>2</Pagination.Item>
                   <Pagination.Item>3</Pagination.Item>
@@ -115,32 +141,6 @@ class DataGrid extends Component {
                   <Pagination.Item>20</Pagination.Item>
                   <Pagination.Last />
                 </Pagination>
-              </Panel.Body>
-            </Panel>
-          </Col>
-          <Col xs={12} md={6} lg={6}>
-            <Panel>
-              <Panel.Heading>Striped Table</Panel.Heading>
-              <Panel.Body>
-                <Table responsive striped bordered hover>
-                  <thead>
-                    <tr>{this.headers.map(header => <th>{header}</th>)}</tr>
-                  </thead>
-                  <tbody>
-                    {this.users.map(user => {
-                      return (
-                        <tr>
-                          <td>{user.name}</td>
-                          <td>{user.date}</td>
-                          <td>{user.role}</td>
-                          <td>
-                            <ColorBadge color={user.statusColor}>Active</ColorBadge>
-                          </td>
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </Table>
               </Panel.Body>
             </Panel>
           </Col>

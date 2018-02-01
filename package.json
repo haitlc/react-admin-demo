@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "bootstrap": "^3",
+    "chart.js": "^2.7.1",
     "classnames": "^2.2.5",
     "font-awesome": "^4.7.0",
     "react": "^16.2.0",

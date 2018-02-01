@@ -1,5 +1,3 @@
-// @flow
-
 import React, { Component } from 'react';
 import { Navbar, Nav, NavItem, Badge } from 'react-bootstrap';
 import styled from 'styled-components';
@@ -7,24 +5,15 @@ import styled from 'styled-components';
 const StyledNav = styled(Nav)`
   position: fixed;
   width: 20vw;
-  height: 100%;  
+  height: 100%;
 `;
 
 class Sidebar extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   handleSelect = () => {};
 
   render() {
     return (
-      <StyledNav
-        bsStyle="pills"
-        stacked
-        activeKey={1}
-        onSelect={this.handleSelect}
-      >
+      <StyledNav bsStyle="pills" stacked activeKey={1} onSelect={this.handleSelect}>
         <NavItem eventKey={1} href="#">
           Dashboard
         </NavItem>

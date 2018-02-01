@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import DataGrid from './DataGrid';
+import LineChart from './LineChart';
 
-describe('<DataGrid>', () => {
+describe('<LineChart>', () => {
   it('renders without crashing', () => {
-    shallow(<DataGrid />);
+    shallow(<LineChart />);
   });
 });

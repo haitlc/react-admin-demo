@@ -29,8 +29,8 @@ class Header extends Component {
       url: '/data-grid'
     },
     {
-      title: 'Form',
-      url: '/form'
+      title: 'Forms',
+      url: '/forms'
     }
   ];
 
@@ -44,7 +44,7 @@ class Header extends Component {
         <Navbar.Collapse>
           <Nav>
             {this.menuItems.map((item, i) => (
-              <NavItem eventKey={i}>
+              <NavItem eventKey={i} key={i}>
                 <NavLink to={item.url}>
                   <div style={{ width: '100%' }}>{item.title}</div>
                 </NavLink>

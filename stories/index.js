@@ -10,7 +10,7 @@ import Header from '../src/components/Header';
 
 import Footer from '../src/components/Footer';
 import Admin from '../src/containers/Admin';
-import Form from '../src/containers/Form';
+import Forms from '../src/containers/Forms';
 import Dashboard from '../src/containers/Dashboard';
 import DataGrid from '../src/containers/DataGrid';
 
@@ -19,4 +19,4 @@ storiesOf('Admin Demo', module)
   .add('Footer', () => <Footer />)
   .add('Dashboard', () => <Dashboard />)
   .add('DataGrid', () => <DataGrid />)
-  .add('Form', () => <Form />);
+  .add('Forms', () => <Forms />);
