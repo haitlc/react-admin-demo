@@ -5,8 +5,8 @@ import Chartjs from 'chart.js';
 
 type Props = {
   type: string,
-  data: any,
-  options?: any,
+  data: {},
+  options?: {},
   height?: number,
   width?: number
 };

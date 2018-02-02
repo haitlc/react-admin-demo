@@ -7,9 +7,14 @@ import { LineChart, BarChart, PieChart } from '../components/charts';
 
 type Props = {};
 
+type DataSettings = {
+  data: { labels: Array<string>, datasets: Array<{}> },
+  options: {}
+};
+
 class Dashboard extends Component<Props> {
-  lineSettings: any;
-  pieChartSettings: any;
+  lineSettings: DataSettings;
+  pieChartSettings: DataSettings;
 
   constructor() {
     super();

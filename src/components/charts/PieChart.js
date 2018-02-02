@@ -5,10 +5,10 @@ import React, { Component } from 'react';
 import Chart from './Chart';
 
 type Props = {
-  data: any,
+  data: {},
   width?: number,
   height?: number,
-  options?: any
+  options?: {}
 };
 
 class PieChart extends Component<Props> {

@@ -76,8 +76,7 @@ class DataGrid extends Component {
       name: 'Friderik Dávid',
       date: '2012/05/21',
       role: 'Staff',
-      status: 'Active',
-      statusColor: 'success'
+      status: 'Default'
     }
   ];
 
@@ -107,7 +106,7 @@ class DataGrid extends Component {
   render() {
     return (
       <FadeIn>
-        <Row >
+        <Row>
           <Col xs={12} md={6} lg={6}>
             <Panel>
               <StyledPanelHeading>
