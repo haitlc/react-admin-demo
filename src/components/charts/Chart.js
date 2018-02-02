@@ -13,6 +13,7 @@ type Props = {
 
 class Chart extends Component<Props> {
   element: any;
+  chartInstance: any;
 
   componentDidMount() {
     this.renderChart();
@@ -22,11 +23,15 @@ class Chart extends Component<Props> {
     const { type, data, options } = this.props;
     const node = this.element;
 
-    new Chartjs(node, {
+    this.chartInstance = new Chartjs(node, {
       type,
       data,
       options
     });
+  }
+
+  componentWillUnmount() {
+    this.chartInstance.destroy();
   }
 
   render() {

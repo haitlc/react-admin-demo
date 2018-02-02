@@ -3,13 +3,13 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 
-import LineChart from '../components/charts/LineChart';
-import BarChart from '../components/charts/BarChart';
+import { LineChart, BarChart, PieChart } from '../components/charts';
 
 type Props = {};
 
 class Dashboard extends Component<Props> {
   lineSettings: any;
+  pieChartSettings: any;
 
   constructor() {
     super();
@@ -20,7 +20,7 @@ class Dashboard extends Component<Props> {
         datasets: [
           {
             label: 'QMH',
-            data: [12, 19, 6, 5, 8, 10, 10, 12, 15, 22, 20, 18],
+            data: [12, 19, 6, 10, 8, 10, 10, 12, 15, 22, 20, 18],
             borderColor: 'rgba(54, 162, 235, 1)',
             backgroundColor: 'rgba(54, 162, 235, 0.2)',
             borderWidth: 1
@@ -41,17 +41,41 @@ class Dashboard extends Component<Props> {
         }
       }
     };
+
+    this.pieChartSettings = {
+      data: {
+        labels: ['1.0.0', '1.1.0', '2.0.0'],
+        datasets: [
+          {
+            // label: 'App Versions',
+            data: [12, 19, 6],
+            backgroundColor: ['rgba(255, 99, 132, 0.7)', 'rgba(54, 162, 235, 0.7)', 'rgba(255, 206, 86, 0.7)'],
+            borderColor: 'rgba(255,255,255,1)',
+            borderWidth: 2
+          }
+        ]
+      },
+      options: {
+        title: {
+          display: true,
+          text: 'App Version'
+        }
+      }
+    };
   }
 
   render() {
     return (
       <Grid>
         <Row>
-          <Col xs={12} md={6}>
+          <Col xs={12} md={6} lg={12}>
             <LineChart data={this.lineSettings.data} options={this.lineSettings.options} />
           </Col>
-          <Col xs={12} md={6}>
+          <Col xs={12} md={6} lg={6}>
             <BarChart data={this.lineSettings.data} options={this.lineSettings.options} />
+          </Col>
+          <Col xs={12} md={12} lg={6}>
+            <PieChart data={this.pieChartSettings.data} options={this.pieChartSettings.options} />
           </Col>
         </Row>
       </Grid>

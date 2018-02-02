@@ -3,11 +3,8 @@ import { Grid } from 'react-bootstrap';
 import styled from 'styled-components';
 import { Switch, Route, Redirect, HashRouter } from 'react-router-dom';
 
-import Header from '../components/Header';
-import Dashboard from '../containers/Dashboard';
-import DataGrid from '../containers/DataGrid';
-import Forms from '../containers/Forms';
-import Footer from '../components/Footer';
+import { Header, Footer } from '../components';
+import { Dashboard, DataGrid, Forms } from './';
 
 const Main = styled.main`
   margin-top: 60px;

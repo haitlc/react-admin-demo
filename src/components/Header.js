@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { LinkContainer } from 'react-router-bootstrap';
 import styled from 'styled-components';
 
 const StyledNavbar = styled(Navbar)`
@@ -9,14 +9,13 @@ const StyledNavbar = styled(Navbar)`
   position: fixed;
   width: 100%;
   z-index: 9999;
+  border-radius: 0;
 `;
 
 const StyledBrand = styled(Navbar.Brand)`
   color: #36a2cd !important;
   font-weight: bold;
 `;
-
-
 
 class Header extends Component {
   menuItems: Array<> = [
@@ -44,11 +43,11 @@ class Header extends Component {
         <Navbar.Collapse>
           <Nav>
             {this.menuItems.map((item, i) => (
-              <NavItem eventKey={i} key={i}>
-                <NavLink to={item.url}>
-                  <div style={{ width: '100%' }}>{item.title}</div>
-                </NavLink>
-              </NavItem>
+              <LinkContainer to={item.url} key={i}>
+                <NavItem eventKey={i} key={i}>
+                  {item.title}
+                </NavItem>
+              </LinkContainer>
             ))}
           </Nav>
         </Navbar.Collapse>

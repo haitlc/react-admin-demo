@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component } from 'react';
 import {
   Panel,
@@ -17,7 +19,13 @@ import {
 
 import styled, { keyframes } from 'styled-components';
 
-const FieldGroup = ({ id, label, help, ...props }) => {
+type FieldGroupProps = {
+  id: string,
+  label: string,
+  help?: string
+};
+
+const FieldGroup = ({ id, label, help, ...props }: FieldGroupProps) => {
   return (
     <FormGroup controlId={id}>
       <ControlLabel>{label}</ControlLabel>
@@ -41,14 +49,16 @@ const FadeIn = styled(Grid)`
   animation: ${fadeIn} 0.5s;
 `;
 
-class Forms extends Component {
+type Props = {};
+
+class Forms extends Component<Props> {
   render() {
     return (
       <FadeIn>
         <Row>
           <Col xs={12} md={6}>
             <Panel>
-              <Panel.Heading>Login Form</Panel.Heading>
+              <Panel.Heading>Logon Form</Panel.Heading>
               <Panel.Body>
                 <Form action="" method="post">
                   <FormGroup>
@@ -74,7 +84,7 @@ class Forms extends Component {
               <Panel.Footer>
                 <ButtonToolbar>
                   <Button type="submit" bsSize="sm" bsStyle="success">
-                    Submit
+                    Logon
                   </Button>
                   <Button type="reset" bsSize="sm" bsStyle="danger">
                     Reset
