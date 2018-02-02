@@ -116,10 +116,10 @@ class Forms extends Component<Props> {
                 <FormGroup>
                   <Radio name="radioGroup" inline>
                     1
-                  </Radio>{' '}
+                  </Radio>
                   <Radio name="radioGroup" inline>
                     2
-                  </Radio>{' '}
+                  </Radio>
                   <Radio name="radioGroup" inline>
                     3
                   </Radio>
