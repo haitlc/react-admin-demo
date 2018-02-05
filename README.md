@@ -1,6 +1,8 @@
 # React Admin Demo
 This is an example project that demonstrate the idea of using React following the guideline and practices from the [`create-react-app` guide](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md)
 
+Demo: https://haitlc.github.io/react-admin-demo/
+
 ## This example includes:
 - Responsive layout by [react-bootstrap](https://github.com/react-bootstrap/react-bootstrap/)
 - Unit test examples with [Jest](https://github.com/facebook/jest) and [Enzyme](https://github.com/airbnb/enzyme)
