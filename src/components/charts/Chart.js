@@ -19,7 +19,11 @@ class Chart extends Component<Props> {
     this.renderChart();
   }
 
-  renderChart() {
+  componentWillUnmount() {
+    this.chartInstance.destroy();
+  }
+
+  renderChart = () => {
     const { type, data, options } = this.props;
     const node = this.element;
 
@@ -28,16 +32,14 @@ class Chart extends Component<Props> {
       data,
       options
     });
-  }
+  };
 
-  componentWillUnmount() {
-    this.chartInstance.destroy();
-  }
+  setCanvasRef = (el: any) => (this.element = el);
 
   render() {
     const { height, width } = this.props;
 
-    return <canvas ref={el => (this.element = el)} height={height} width={width} />;
+    return <canvas ref={this.setCanvasRef} height={height} width={width} />;
   }
 }
 
