@@ -57,7 +57,7 @@ You may need to install this [Visual Studio Code plugin](https://marketplace.vis
 ![Prettier](./docs/prettier.gif)
 
 # CICD support
-Demonstrate here is by Travis CI, similar approach can be done on other CI servers (e.g. Jenkins)
+Demonstration here is by Travis CI, similar approach can be done on other CI servers (e.g. Jenkins)
 
 ![Current job](./docs/cicd/current-job.png)
 ![Branches](./docs/cicd/branches.png)
