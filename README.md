@@ -10,6 +10,7 @@ Demo: https://haitlc.github.io/react-admin-demo/
 - Style management using CSS-in-JS library, [styled-components](https://github.com/styled-components/styled-components)
 - UI component development environment using [Storybook](https://storybook.js.org/)
 - Code formatting using [Prettier](https://github.com/prettier/prettier)
+- CICD support 
 
 ## Run 
 Install dependencies
@@ -55,6 +56,12 @@ You may need to install this [Visual Studio Code plugin](https://marketplace.vis
 
 ![Prettier](./docs/prettier.gif)
 
+# CICD support
+Demonstrate here is by Travis CI, similar approach can be done on other CI servers (e.g. Jenkins)
+
+![Current job](./docs/cicd/current-job.png)
+![Branches](./docs/cicd/branches.png)
+![branch-history](./docs/cicd/branch-history.png)
 
 
 
